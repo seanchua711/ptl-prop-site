@@ -29,7 +29,7 @@
 .cta{padding:54px 0;text-align:center;background:linear-gradient(135deg,#15372f,#0f2924);color:#fff}.cta h2{font-size:40px;margin-bottom:8px}.cta p{color:#d6e2dc}.cta-actions{display:flex;justify-content:center;gap:12px;margin-top:24px}footer{background:#0d211d;color:#c9d5d0;padding:22px 0;font-size:13px}footer .container{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
 #toast{position:fixed;right:20px;bottom:20px;z-index:80;background:#fff;color:#222;padding:12px 16px;border:2px solid var(--gold);border-radius:10px;box-shadow:var(--shadow);opacity:0;transform:translateY(10px);pointer-events:none;transition:.2s}#toast.show{opacity:1;transform:none}.mobile-panel{display:none}
 @media(max-width:980px){.navlinks{display:none}.menu{display:block}.mobile-panel{position:absolute;top:76px;right:20px;display:none;flex-direction:column;background:#17322c;padding:12px;border-radius:14px;min-width:180px;box-shadow:var(--shadow)}.mobile-panel.open{display:flex}.searchbox{grid-template-columns:1fr 1fr 1fr}.searchbox input{grid-column:1/-1}.search-btn{height:52px}.benefits{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.listings-grid{grid-template-columns:1fr 1fr}.agent-grid{grid-template-columns:1fr}.agent-flow{grid-template-columns:1fr 1fr}}
-@media(max-width:640px){.container{width:min(100% - 24px,1180px)}.topbar{padding:10px 0}.brand img{height:44px}.nav-actions{display:none}.hero{min-height:760px;padding:92px 0 38px;background-position:58% center}h1{font-size:40px;max-width:540px}.sub{font-size:15px;line-height:1.5;max-width:92%}.searchbox{grid-template-columns:1fr 1fr;padding:10px;border-radius:16px}.searchbox input{grid-column:1/-1}.searchbox select{width:100%}.searchbox .wide-mobile{grid-column:1/-1}.search-btn{grid-column:1/-1}.hero-meta{font-size:12px;gap:12px;flex-wrap:wrap}.benefits{grid-template-columns:1fr 1fr;margin-top:-30px;gap:10px}.benefit{padding:14px;display:block}.benefit .ico{margin-bottom:8px}.section{padding:48px 0}h2{font-size:30px}.section-head{display:block}.steps{grid-template-columns:1fr 1fr;gap:10px}.step{padding:18px;min-height:200px}.listings-grid{grid-template-columns:1fr}.compare{grid-template-columns:1fr}.vs{height:36px}.agent-flow{grid-template-columns:1fr 1fr}.agent-card{min-height:170px;padding:15px}.cta h2{font-size:31px}.cta-actions{flex-direction:column}.cta-actions .btn{width:100%}}
+@media(max-width:640px){.container{width:min(100% - 24px,1180px)}.topbar{padding:10px 0}.brand img{height:44px}.nav-actions{display:none}.hero{min-height:760px;padding:92px 0 38px;background-position:58% center}h1{font-size:40px;max-width:540px}.sub{font-size:15px;line-height:1.5;max-width:92%}.searchbox{grid-template-columns:1fr 1fr;padding:10px;border-radius:16px}.searchbox input{grid-column:1/-1}.searchbox select{width:100%}.searchbox .wide-mobile{grid-column:1/-1}.search-btn{grid-column:1/-1}.hero-meta{font-size:12px;gap:12px;flex-wrap:wrap}.benefits{grid-template-columns:1fr 1fr;margin-top:-12px;gap:10px}.benefit{padding:14px;display:block}.benefit .ico{margin-bottom:8px}.section{padding:48px 0}h2{font-size:30px}.section-head{display:block}.steps{grid-template-columns:1fr 1fr;gap:10px}.step{padding:18px;min-height:200px}.listings-grid{grid-template-columns:1fr}.compare{grid-template-columns:1fr}.vs{height:36px}.agent-flow{grid-template-columns:1fr 1fr}.agent-card{min-height:170px;padding:15px}.cta h2{font-size:31px}.cta-actions{flex-direction:column}.cta-actions .btn{width:100%}}
 
 /* ── 手机版微调 2026-08-14 ──────────────────────────────────────────
    1. Logo 44 → 34px（约 −23%）
@@ -45,7 +45,7 @@
   .hero{min-height:660px;padding:76px 0 34px;background-position:center}
   h1{font-size:34px;line-height:1.08;max-width:none}
   .sub{font-size:15px;line-height:1.5;margin:14px 0 20px}
-  .hero-meta{margin-top:16px;gap:10px}
+  .hero-meta{margin-top:14px;margin-bottom:18px;gap:10px}
   .searchbox{padding:10px;gap:7px}
 }
 
@@ -62,13 +62,13 @@
 
   /* 搜索器：一栏到底，顺序就是 DOM 顺序
      1 买/租　2 地区　3 类型　4 价格上限　5 搜索 */
-  .searchbox{grid-template-columns:1fr;gap:7px;width:100%}
+  .searchbox{grid-template-columns:1fr;gap:6px;width:100%}
   .searchbox input,.searchbox select,.search-btn{grid-column:1/-1;width:100%;min-width:0}
-  .searchbox input,.searchbox select{height:46px}
-  .search-btn{height:48px}
+  .searchbox input,.searchbox select{height:42px}
+  .search-btn{height:46px}
 
   /* Hero 再收紧 50px，让搜索器更快进第一屏 */
-  .hero{min-height:590px;padding:58px 0 24px}
+  .hero{min-height:590px;padding:58px 0 46px}
   .sub{margin:10px 0 14px;font-size:14.5px}
 
   /* How it works：桌机四格 → 手机纵向流程，号码靠左、文字在右 */
@@ -86,6 +86,14 @@
   /* 好处卡：≥390 两栏、<360 一栏 */
   .benefits{grid-template-columns:1fr 1fr}
 }
+@media(max-width:640px){
+  /* icon 椭圆缩小 23%，让卡片标题更快出现 */
+  .benefit .ico{min-width:34px;width:34px;height:34px;font-size:17px}
+  .benefit{padding:12px}
+  /* hero 底部的柔和过渡：原本 180px 的暗渐层在手机上太重 */
+  .hero:after{height:90px}
+}
+
 @media(max-width:359px){
   .benefits{grid-template-columns:1fr}
 }
