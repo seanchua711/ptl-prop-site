@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#16362f">
 <meta name="description" content="PTL-PROP AI-powered property matching platform for Malaysia. Tell us what you need, let AI search, and only connect with agents when you are interested.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="PTL-PROP">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="preload" as="font" type="font/woff2" href="assets/inter-latin.woff2" crossorigin>
 <link rel="preload" as="image" href="assets/hero-desktop.webp" media="(min-width:641px)">
 <link rel="preload" as="image" href="assets/hero-mobile.webp" media="(max-width:640px)">
@@ -154,6 +160,12 @@ window.syncPriceOptions = function () {
 window.pubQuick=function(type){const t=$('pubType');if(t)t.value=type||'';syncPriceOptions();pubSearch(true)};window.pubContact=function(){window.open(waGeneral(),'_blank','noopener')};
 document.addEventListener('keydown',e=>{if(e.key==='Enter'&&document.activeElement&&document.activeElement.id==='pubQ')pubSearch(true)});
 document.addEventListener('click',e=>{if(e.target.closest('.mobile-panel .nav-pill'))$('navRight')?.classList.remove('open')});
+
+// 注册 service worker —— 它不做快取，只是为了让 Android 认得这是可安装的 App。
+// 理由写在 sw.js 里。
+if ('serviceWorker' in navigator) {
+  addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
+}
 function boot(){syncPriceOptions();pubSearch(true);}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',boot);else boot();
 })();
