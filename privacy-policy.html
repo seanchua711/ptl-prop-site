@@ -86,6 +86,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-betw
 <li>The messages you send and receive in the conversation, including text, voice notes (which are converted to text) and the fact that you sent an image.</li>
 <li>Property requirements you share or that can be understood from the conversation, such as buy or rent, area, property type, budget, size, preferred viewing time and listings you are interested in.</li>
 <li>Enquiry records, such as which agent is responsible for your enquiry, which listings were checked for availability, viewing requests, cancellations and scheduled follow-up messages.</li>
+<li>If your enquiry comes from a property portal (for example PropertyGuru) and reaches an agent's connected WhatsApp number, a record of that enquiry, including the listing reference and your phone number.</li>
+<li>Technical WhatsApp connection data kept on our server for each connected number, such as encryption session data and the mapping between WhatsApp account identifiers and phone numbers. This does not include message content.</li>
+<li>Server logs, which can include your phone number and short excerpts of messages, used for troubleshooting.</li>
 </ul>
 <h3>b) Agents, agencies and other platform users</h3>
 <ul>
@@ -106,7 +109,12 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-betw
 </ul>
 
 <h2 id="whatsapp">3. WhatsApp messaging data</h2>
-<p>PTL-PROP works with WhatsApp numbers that property agents and agencies connect to the platform. When you message one of these numbers:</p>
+<h3>How WhatsApp numbers are connected</h3>
+<ul>
+<li><b>Currently:</b> an agent or agency connects their own WhatsApp number to PTL-PROP by adding PTL-PROP as a linked device on that WhatsApp account. PTL-PROP then receives and sends messages for that number, and the same conversations also remain visible in the agent's own WhatsApp app.</li>
+<li><b>Planned, not yet available:</b> connection through Meta's WhatsApp Business Platform (Cloud API) for agencies onboarded through Meta's authorisation process. This option is not live. We will update this policy before it becomes available.</li>
+</ul>
+<p>When you message a number connected to PTL-PROP:</p>
 <ul>
 <li>Your messages are received by PTL-PROP and stored in the account of the agent or agency who operates that number.</li>
 <li>Our AI assistant may read your messages and reply on the agent's behalf (see <a href="#ai">section 5</a>). The agent can read the conversation, reply personally and pause the AI at any time.</li>
@@ -174,6 +182,9 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-betw
 <li><b>Customer conversations and enquiry records</b> are kept in the account of the responsible agent or agency until they are deleted by that agent, or by us following a deletion request. <mark class="todo">[TO CONFIRM: maximum retention period for inactive conversations, if any]</mark></li>
 <li>If you have not contacted a PTL-PROP number for 45 days, a new enquiry may be assigned to a different agent. Earlier conversation records remain with the previous agent unless deleted.</li>
 <li><b>Agent and agency accounts</b> are kept while the account is active. When an account is deleted by an administrator, the account profile and sign-in record are removed. <mark class="todo">[TO CONFIRM: what happens to an agent's listings and customer records after the account is closed]</mark></li>
+<li><b>Server logs</b> are kept for troubleshooting for <mark class="todo">[TO CONFIRM: server log retention period]</mark>.</li>
+<li><b>Technical WhatsApp connection data</b> for a number is kept while that number is connected to PTL-PROP, and is removed from our server when the number is disconnected.</li>
+<li><b>OpenAI</b> may keep message content sent to it for a limited period under its own API data retention policy.</li>
 <li>Our service providers may keep backups or logs for a limited period under their own retention schedules.</li>
 </ul>
 <p>To request deletion of your data, see our <a href="/data-deletion">Data Deletion Instructions</a>.</p>
@@ -198,7 +209,7 @@ footer .wrap{display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:space-betw
 </ul>
 
 <h2 id="transfer">11. Processing outside Malaysia</h2>
-<p>Some of our service providers process data outside Malaysia. Our application server is located in Singapore. Our database provider stores data in <mark class="todo">[TO CONFIRM: Google Cloud / Firestore region]</mark>. OpenAI, GitHub and Cloudflare may process data in the United States and other countries. Where personal data is transferred outside Malaysia, we take steps to ensure it receives a level of protection consistent with the PDPA.</p>
+<p>Some of our service providers process data outside Malaysia. Our application server and our main database (Google Cloud Firestore, region asia-southeast1) are located in Singapore. User sign-in is handled by Google Firebase Authentication, and OpenAI, GitHub and Cloudflare may process data in the United States and other countries. Where personal data is transferred outside Malaysia, we take steps to ensure it receives a level of protection consistent with the PDPA.</p>
 
 <h2 id="children">12. Children</h2>
 <p>PTL-PROP is intended for adults. It is not directed to children under 18, and we do not knowingly collect personal data from children. If you believe a child has provided personal data to us, please contact us and we will delete it.</p>
